@@ -9,6 +9,7 @@
 #include <dt-bindings/soc/qcom,apr.h>
 #include <dt-bindings/sound/qcom,q6afe.h>
 #include <dt-bindings/sound/qcom,q6asm.h>
+#include <dt-bindings/sound/qcom,q6voice.h>
 
 #define CPU(number, cluster, value)			\
 	CPU##number: cpu@number {			\
@@ -1262,6 +1263,26 @@
 							#sound-dai-cells = <0>;
 						};
 					};
+
+					q6mvm: apr-service@9 {
+						compatible = "qcom,q6mvm";
+						reg = <APR_SVC_ADSP_MVM>;
+
+						q6voicedai: dais {
+							compatible = "qcom,q6voice-dais";
+							#sound-dai-cells = <0>;
+						};
+					};
+
+					q6cvs: apr-service@a {
+						compatible = "qcom,q6cvs";
+						reg = <APR_SVC_ADSP_CVS>;
+					};
+
+					q6cvp: apr-service@b {
+						compatible = "qcom,q6cvp";
+						reg = <APR_SVC_ADSP_CVP>;
+					};
 				};
 			};
 		};
@@ -1396,6 +1417,13 @@
 				link-name = "MultiMedia4";
 				cpu {
 					sound-dai = <&q6asmdai MSM_FRONTEND_DAI_MULTIMEDIA4>;
+				};
+			};
+
+			cs-voice-dai-link {
+				link-name = "CS-Voice";
+				cpu {
+					sound-dai = <&q6voicedai CS_VOICE>;
 				};
 			};
 
