@@ -62,7 +62,7 @@
 };
 
 &cpr {
-	compatible = "qcom,msm632-cpr4";
+	compatible = "qcom,sdm632-cpr4";
 
 	nvmem-cells = <&cpr_efuse_quot_offset3>,
 		      <&cpr_efuse_quot_offset5>,
