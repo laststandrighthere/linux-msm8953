@@ -14,32 +14,18 @@
 	model = "Xiaomi Redmi 5 Plus / Note 5 (vince)";
 	compatible = "xiaomi,vince", "qcom,msm8953";
 
-	chosen {
-		bootargs = "console=null";
-	};
-
 	reserved-memory {
 		/delete-node/ other_ext_region@85b00000;
 
 		other_ext_region@84300000 {
 			no-map;
-			reg = <0x00 0x84300000 0x00 0x2000000>;
+			reg = <0x0 0x84A00000 0x0 0x1900000>;
 		};
 
 		ramoops@ef000000 {
 			compatible = "ramoops";
-			reg = <0x0 0xef000000 0x0 0x200000>;
-			console-size = <0x200000>;
-		};
-
-		tzlog_bck_region@eefe4000 {
-			no-map;
-			reg = <0x0 0xeefe4000 0x0 0x2000>;
-		};
-
-		wdog_cpuctx_region@eefe6000 {
-			no-map;
-			reg = <0x0 0xeefe6000 0x0 0x1a000>;
+			reg = <0x0 0x9ff00000 0x0 0x00100000>;
+			console-size = <0x100000>;
 		};
 	};
 
