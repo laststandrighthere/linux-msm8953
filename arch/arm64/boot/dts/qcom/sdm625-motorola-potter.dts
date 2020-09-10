@@ -46,10 +46,21 @@
 			reg = <0x0 0xeefe4000 0x0 0x2000>;
 		};
 
+		tzlog_bck_region@aefd2000 {
+			no-map;
+			reg = <0x0 0xaefd2000 0x0 0x2000>;
+		};
+
 		wdog_cpuctx_region@eefe6000 {
 			no-map;
 			reg = <0x0 0xeefe6000 0x0 0x1a000>;
 		};
+
+		wdog_cpuctx_region@aefd4000 {
+			no-map;
+			reg = <0x0 0xaefd4000 0x0 0x2c000>;
+		};
+
 	};
 
 	gpio-keys {
